@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  width: calc(100% - 2 * 207px);
+  margin: 27px auto 0;
+  border: 1px solid white;
+  justify-content: space-between;
+
+  .logo {
+    align-self: center;
+    height: 41px;
+  }
+
+  .button {
+    width: 246px;
+    height: 60px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(48, 37, 148);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+  }
+}
