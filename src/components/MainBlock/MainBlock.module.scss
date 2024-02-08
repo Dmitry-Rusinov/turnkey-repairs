@@ -2,11 +2,10 @@
   display: flex;
   position: relative;
   margin-top: 54px;
-  width: /* 1515px */79.8%;
+  width: /* 1515px */ 80%;
   height: 664px;
   align-self: flex-end;
   justify-content: space-between;
-  border: 1px solid white;
 
   .info_block {
     display: flex;
@@ -18,9 +17,13 @@
 
     animation: info_block-animation 1.5s linear forwards;
 
-      @keyframes info_block-animation {
-        from {left:-100%;}
-        to {left:0;}
+    @keyframes info_block-animation {
+      from {
+        left: -100%;
+      }
+      to {
+        left: 0;
+      }
     }
 
     .title {
@@ -44,7 +47,7 @@
       max-width: 332px;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         padding-top: 6px;
         width: 50%;
@@ -75,25 +78,45 @@
         }
       }
     }
-
-
   }
 
   .image {
     background-image: url(../../images/mainPicture.svg);
     background-size: cover;
     width: 745px;
-    height: 664px;
+    height: /* 664px */100%;
     position: absolute;
     top: 0;
     right: -100%;
     z-index: 1;
     animation: image-animation 1.5s linear forwards;
   }
-  
-   @keyframes image-animation {
-      from {right:-100%;}
-      to {right:0;}
+
+  @keyframes image-animation {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0;
+    }
+  }
+
+  .scroll_button {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    bottom: 75px;
+    cursor: pointer;
+    left: 50%;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: url(../../images/scroll-button.svg);
+    transition: .5s ease-in-out;
+    z-index: 20;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 }
-

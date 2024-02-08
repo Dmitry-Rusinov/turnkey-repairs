@@ -3,7 +3,7 @@ import styles from './MainBlock.module.scss'
 import icon1 from '../../images/icon1.svg';
 import icon2 from '../../images/icon2.svg';
 import icon3 from '../../images/icon3.svg';
-import mainPicture from '../../images/mainPicture.svg'
+import CalculationForm from '../CalculationForm/CalculationForm';
 
 function MainBlock() {
 
@@ -28,6 +28,8 @@ function MainBlock() {
         </article>
       </div>
       <div className={styles.image}></div>
+      <CalculationForm />
+      <button className={styles.scroll_button}></button>
     </section>
   )
 }
