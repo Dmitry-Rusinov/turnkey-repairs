@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch } from "react-redux"
+import { setQtyRoomValue, setRoomValue } from "../../store/formSlice";
+
 import styles from "./RadioInput.module.scss";
 
 function RadioInput({ text, inputId, name }) {
-  const [value, setValue] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleChangeValue = (e) => {
-    setValue("");
-    setValue(e.target.id);
+    if(name === "apartment") {
+      dispatch(setRoomValue(e.target.id))
+    } else {
+      dispatch(setQtyRoomValue(e.target.id))
+    }
   };
 
   return (
@@ -15,12 +22,11 @@ function RadioInput({ text, inputId, name }) {
         <input
           type="radio"
           name={name}
-          value={value}
           onChange={handleChangeValue}
-          className={styles.radio}
+          className={styles.radio_input}
           id={inputId}
         />
-        <span className={styles.border}></span>
+        <span className={styles.border_img}></span>
       </label>
       <p className={styles.radio_description}>{text}</p>
     </div>

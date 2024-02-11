@@ -1,8 +1,8 @@
 .header {
   display: flex;
+  justify-content: space-between;
   width: calc(100% - 2 * 207px);
   margin: 27px auto 0;
-  justify-content: space-between;
 
   .logo {
     align-self: center;

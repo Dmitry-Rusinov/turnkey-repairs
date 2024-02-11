@@ -8,7 +8,7 @@
     display: none;
   }
 
-  .border {
+  .border_img {
     display: flex;
     background-image: url(../../images/checkbox-icon.svg);
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@
   }
 }
 
-.radio_btn input[type="radio"]:checked + .border {
+.radio_btn input[type="radio"]:checked + .border_img {
   background-color: rgb(99, 95, 95);
   opacity: 0.4;
 }

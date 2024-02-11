@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setRangeValue, setDataInput } from "../../store/formSlice";
 import RadioInput from "../RadioInput/RadioInput";
+
 import styles from "./CalculationForm.module.scss";
 
 function CalculationForm() {
-  const [rangeValue, setRangeValue] = useState("65");
-
+  const dispatch = useDispatch();
+  const { rangeValue, roomValue, qtyRoomValue, dataInput } = useSelector(
+    (state) => state.form
+  );
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    console.log('click');
-  }
+    dispatch(
+      setDataInput({
+        rangeValue: rangeValue,
+        roomValue: roomValue,
+        qtyRoomValue: qtyRoomValue,
+      })
+    );
+  };
+  console.log(dataInput);
 
   return (
-    <form className={styles.container}>
+    <form className={styles.form}>
       <h3>Рассчитайте стоимость ремонта</h3>
       <div className={styles.settingBlock}>
         <p className={styles.description}>
@@ -24,7 +37,7 @@ function CalculationForm() {
           min="1"
           max="150"
           value={rangeValue}
-          onChange={(e) => setRangeValue(e.target.value)}
+          onChange={(e) => dispatch(setRangeValue(e.target.value))}
           className={styles.slyder}
           id="squareRange"
         ></input>
@@ -50,7 +63,13 @@ function CalculationForm() {
           <RadioInput text="Студия" inputId="room" name="room" />
         </div>
       </div>
-      <button onSubmit={handleSubmitForm} type="submit" className={styles.form_submit}>Отправить</button>
+      <button
+        onClick={handleSubmitForm}
+        type="submit"
+        className={styles.form_submit}
+      >
+        Отправить
+      </button>
     </form>
   );
 }
