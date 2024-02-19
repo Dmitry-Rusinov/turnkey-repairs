@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styles from './MainBlock.module.scss'
 import icon1 from '../../images/icon1.svg';
 import icon2 from '../../images/icon2.svg';
@@ -11,7 +11,7 @@ function MainBlock() {
 
     const handleScroll = () => {
       console.log('click');
-      window.scrollBy(0, 30);
+      window.scrollBy(0, 300);
     };
 
     //window.addEventListener('scroll', handleScroll);

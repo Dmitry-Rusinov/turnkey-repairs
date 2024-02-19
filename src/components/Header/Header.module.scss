@@ -14,13 +14,24 @@
     height: 60px;
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     background-color: rgb(48, 37, 148);
     font-weight: 700;
-    font-size: 16px;
+    font-size: clamp(0.688rem, 0.33rem + 0.558vw, 1rem);
     line-height: 60px;
+    cursor: pointer;
     text-align: center;
     color: white;
     text-transform: uppercase;
+    text-wrap: nowrap;
+    transition: ease .2s;
+
+    &:active {
+      background: rgb(95, 78, 247);
+    }
+
+    &:hover {
+      opacity: .8;
+    }
   }
 }

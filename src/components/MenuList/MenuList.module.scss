@@ -5,7 +5,7 @@
 .dropdown__button {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 16px;
+  font-size: clamp(0.688rem, 0.33rem + 0.558vw, 1rem); // 16px
   font-weight: 600;
   line-height: 19px;
   text-transform: uppercase;
