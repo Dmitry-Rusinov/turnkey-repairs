@@ -42,6 +42,11 @@
     color: white;
     font-size: 10px;
     letter-spacing: 1px;
+    cursor: pointer;
+
+    &:active {
+      opacity: .8;
+    }
   }
 }
 

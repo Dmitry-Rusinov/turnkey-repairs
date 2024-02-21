@@ -4,23 +4,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { showOverlay, hiddenOverlay } from "../../store/modalSlice";
 
 import styles from "./CallbackForm.module.scss";
+import contact from "../contact"
 
 function CallbackForm() {
   const dispatch = useDispatch();
   const { isOverlay, type } = useSelector((state) => state.modal);
+
   return (
     <>
-      <div
+      <form
         className={
           isOverlay && type === "form"
             ? `${styles.container} ${styles.container_active}`
             : `${styles.container}`
         }
+        id="email-form"
+        method="post"
       >
         <h3>Форма рассылки</h3>
         <div
           style={{
-            display: 'flex',
+            display: "flex",
             flexDirection: "row",
             height: 20,
             width: "100%",
@@ -29,12 +33,15 @@ function CallbackForm() {
         >
           <input
             className={styles.input}
+            id="email"
             type="email"
             pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}"
+            placeholder="email"
+            required
           />
-          <button className={styles.button}>Отправить</button>
+          <button type="submit" className={styles.button}>Отправить</button>
         </div>
-      </div>
+      </form>
       <div
         onClick={() => dispatch(hiddenOverlay())}
         className={
@@ -43,6 +50,7 @@ function CallbackForm() {
             : `${styles.overlay}`
         }
       ></div>
+      <script src="../contact.js"></script>
     </>
   );
 }
