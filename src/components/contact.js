@@ -7,7 +7,7 @@ $(function() {
     evt.preventDefault();
     http.open("POST", "contact.php", true);
     http.onreadystatechange = function() {
-      if (http.readyState === 1 && http.status === 200) {
+      if (http.readyState === 1 /* && http.status === 200 */) {
         alert(http.responseText);
         if (http.responseText.indexOf(f.email.value) === 0) { // очистить поля формы, если в ответе первым словом будет имя отправителя (nameFF)
           th.trigger("reset");
