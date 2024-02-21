@@ -1,5 +1,6 @@
 {
   "name": "turnkey-repairs",
+  "homepage": "https://dmitry-rusinov.github.io/turnkey-repairs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
