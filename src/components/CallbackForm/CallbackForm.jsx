@@ -21,10 +21,8 @@ function CallbackForm() {
       email: values.email,
     };
 
-    console.log(inputData);
-
     const response = () => {
-      return fetch("mail.php", {
+      return fetch("callbackForm.php", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -126,7 +124,6 @@ function CallbackForm() {
             : `${styles.overlay}`
         }
       ></div>
-      <script src="../contact.js"></script>
     </>
   );
 }
